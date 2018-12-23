@@ -12,12 +12,13 @@ var main = function(){
 
 			var $photos = $(".photos");
 
-			var $image = $("<img>");
+			var $image = $("<img>").hide();
 			
-			//add image src attribute using jQuery 
+			//add image src attribute to each returned url  
 			$image.attr("src", photo.media.m);
 				//append to class .photos
 				$photos.append($image);
+				$image.fadeIn();
 		});
 	});
 };
