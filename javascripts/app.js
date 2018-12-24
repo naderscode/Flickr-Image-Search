@@ -1,37 +1,28 @@
 var main = function(){
 	"use strict";
 
-	
-	
 	var $input = $(".input");
 	var $button = $(".search");
-	var url;
+	
+	var searchURL;
 
 	$button.on("click", function(event){
+
+		if($input.val() !== "") {
 		
-		var $searchTag=$input.val();
+			var $searchTag=$input.val();
 
-		console.log($searchTag);
-	
+			console.log($searchTag);
 		
-
-		var url = "http://api.flickr.com/services/feeds/photos_public.gne?tags={{searchterm}}&format=json&jsoncallback=?";
-
-		
-		
-		url.replace("{{searchterm}}", $searchTag);
-
-		
-		console.log(url);
-		//$input.val("");
-	});
+			
+			var searchURL = "http://api.flickr.com/services/feeds/photos_public.gne?tags="+$searchTag+"&format=json&jsoncallback=?";
+				
+			console.log(searchURL);
+			console.log($searchTag);
+			$input.val("");
 
 
-
-
-	
-
-	$.getJSON(url, function(flickrResponse){
+			$.getJSON(searchURL, function(flickrResponse){
 
 		//iterate over the item objects
 		flickrResponse.items.forEach(function(photo){
@@ -50,6 +41,10 @@ var main = function(){
 				$image.fadeIn();
 		});
 	});
+
+		}
+	});
+	
 };
 
 $(document).ready(main);
