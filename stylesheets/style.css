@@ -3,6 +3,12 @@
 	margin: 0;
 }
 
+h1 {
+	margin-left:20%;
+	margin-bottom: 20px;
+	font-family: 'Roboto',arial,sans-serif;
+}
+
 main {
 	width:80%;
 }
