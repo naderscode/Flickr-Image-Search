@@ -3,10 +3,34 @@
 	margin: 0;
 }
 
+main {
+	width:80%;
+}
+
 img {
 	width:400px;
 	height:300px;
 	padding: 5px;
 	margin: 5px;
 	border: 2px solid blue;
+	border-radius: 5px;
 }
+
+.input {
+	width:50%;
+	float:left;
+	margin-left:20px;
+
+}
+
+button {
+	display:inline-block;
+	width:20%;
+	margin-left: 10px;
+	
+}
+
+.search {
+	background: yellow;
+}
+

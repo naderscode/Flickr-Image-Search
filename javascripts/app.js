@@ -1,7 +1,36 @@
 var main = function(){
 	"use strict";
 
-	var url = "http://api.flickr.com/services/feeds/photos_public.gne?tags=flowers&format=json&jsoncallback=?";
+	
+	
+	var $input = $(".input");
+	var $button = $(".search");
+	var url;
+
+	$button.on("click", function(event){
+		
+		var $searchTag=$input.val();
+
+		console.log($searchTag);
+	
+		
+
+		var url = "http://api.flickr.com/services/feeds/photos_public.gne?tags={{searchterm}}&format=json&jsoncallback=?";
+
+		
+		
+		url.replace("{{searchterm}}", $searchTag);
+
+		
+		console.log(url);
+		//$input.val("");
+	});
+
+
+
+
+	
+
 	$.getJSON(url, function(flickrResponse){
 
 		//iterate over the item objects
