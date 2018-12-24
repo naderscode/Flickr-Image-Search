@@ -9,16 +9,18 @@ var main = function(){
 	$button.on("click", function(event){
 
 		if($input.val() !== "") {
+
+			$(".photos").empty();
 		
 			var $searchTag=$input.val();
 
-			console.log($searchTag);
+			//console.log($searchTag);
 		
 			
 			var searchURL = "http://api.flickr.com/services/feeds/photos_public.gne?tags="+$searchTag+"&format=json&jsoncallback=?";
 				
-			console.log(searchURL);
-			console.log($searchTag);
+			//console.log(searchURL);
+			
 			$input.val("");
 
 
