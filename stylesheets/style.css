@@ -14,8 +14,8 @@ main {
 }
 
 img {
-	width:400px;
-	height:300px;
+	width:auto;
+	height:auto;
 	padding: 5px;
 	margin: 5px;
 	border: 2px solid blue;
